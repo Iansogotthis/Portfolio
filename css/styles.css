@@ -211,6 +211,25 @@ section {
 .project-link:hover {
     background-color: #555;
 }
+.project-container {
+    width: 500px;
+    overflow: hidden;
+    transition: width 0.3s ease; /* Add transition effect for smooth resizing */
+}
+
+.project-container:hover {
+    width: 100%; /* Full width */
+}
+
+.project-item {
+    width: 100%; /* Set initial width to full width */
+    opacity: 0; /* Hide by default */
+    transition: opacity 0.3s ease; /* Add transition effect for smooth opacity change */
+}
+
+.project-container:hover .project-item {
+    opacity: 1; /* Show on hover */
+}
 
 /*******************************
          Skills Section
