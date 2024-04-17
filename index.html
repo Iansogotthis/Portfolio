@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Portfolio</title>
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <!-- <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script> -->
     <script defer src="/js/app.js"></script>
-    <py-script src="/app.py"></py-script>
+    <!-- <py-script src="/app.py"></py-script> -->
   </head>
 
   <body>
@@ -314,7 +314,7 @@
     </section>
 
     <section id="contact">
-      <h2>Get in Touch</h2>
+      <h2 style="text-align:center">Get in Touch</h2>
       <br />
 
       <ul class="contact-links">
@@ -337,12 +337,8 @@
       </ul>
       <br />
       <div id="responseMessage"></div>
-      <form
-        class="contact-form"
-        id="contactForm"
-        action="/submit"
-        method="POST"
-      >
+      <form class="contact-form" id="contactForm" action="http://localhost:3000/submit" method="POST">
+
         <label for="name">Name:</label>
         <input
           style="text-align: center; border: 2px solid white"
@@ -381,8 +377,5 @@
     <footer>
       <p>&copy; 2024 Ian Mount. All rights reserved.</p>
     </footer>
-   
-  
-    
   </body>
 </html>
