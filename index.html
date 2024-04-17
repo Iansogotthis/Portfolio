@@ -1,198 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Portfolio</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
     <script defer src="/js/app.js"></script>
-</head>
+    <py-script src="/app.py"></py-script>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav id="nav-menu"></nav>
+      <nav id="nav-menu"></nav>
     </header>
 
     <section id="home">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Hi, my name is Ian Mount and I'm a freshly graduated from the Full-Stack; Full-Time Web Development Boot Camp
-            at General Assembly <a href="https://generalassemb.ly/" target="_blank"><img src="/images/GA.png"
-                    alt="General Assembly Logo" style="width: 4%; height: 3%;"></a>. </p>
-        <p> I intend to do great things and desire the knowledge that only comes with experience.
-            <br />
-            strive to better myself with each working moment; cherishing feedback almost over praise and
-            <br />
-            I wish to help create efficient, and user-friendly solutions that solve real-world problems.
-        </p>
-        <p> To that end I would love to <a href="#contact" class="smooth-scroll">link up</a> with anyone(s) that wants
-            that thinking applied to helping solve their problems Take a look around and feel free to get in touch if
-            you'd like to learn more about me.</p>
+      <h1>Welcome to My Portfolio</h1>
+      <p>
+        Hi, my name is Ian Mount and I'm a freshly graduated from the
+        Full-Stack; Full-Time Web Development Boot Camp at General Assembly
+        <a href="https://generalassemb.ly/" target="_blank"
+          ><img
+            src="/images/GA.png"
+            alt="General Assembly Logo"
+            style="width: 4%; height: 3%" /></a
+        >.
+      </p>
+      <p>
+        I intend to do great things and desire the knowledge that only comes
+        with experience.
+        <br />
+        strive to better myself with each working moment; cherishing feedback
+        almost over praise and
+        <br />
+        I wish to help create efficient, and user-friendly solutions that solve
+        real-world problems.
+      </p>
+      <p>
+        To that end I would love to
+        <a href="#contact" class="smooth-scroll">link up</a> with anyone(s) that
+        wants that thinking applied to helping solve their problems Take a look
+        around and feel free to get in touch if you'd like to learn more about
+        me.
+      </p>
     </section>
-    
+
     <section id="about">
-        <h2>About Me</h2>
-        <div class="about-content" style="display: flex; justify-content: center;">
-            <img src="/images/me.jpg" alt="[Myself]" class="about-image">
-            <div class="about-cards-container"></div> <!-- This div is necessary for rendering about cards -->
-        </div>
+      <h2>About Me</h2>
+      <div class="about-content" style="display: flex; justify-content: center">
+        <img
+          style="width: 25%; border-radius: 12%"
+          src="/images/294489401_10219718817519575_2334691894057858513_n.jpg"
+          alt="[Myself]"
+          class="about-image"
+        />
+        <div class="about-cards-container"></div>
+        <!-- This div is necessary for rendering about cards -->
+      </div>
     </section>
 
     <section id="projects">
-        <h2>My Projects</h2>
-        <div class="project-container">
-            <div class="project-item">
-                <div class="project-image-container">
-                    <img src="/images/checkers.png" alt="Project 1" class="project-image">
-                </div>
-                <div class="project-details">
-                    <h3>Project 1: Banana Berry Checkers</h3>
-                    <p>Just a Cute Checkers Game</p>
-                    <p>Technologies used: HTML, CSS, and JavaScript.</p>
-                    <div class="project-links">
-                        <a href="https://iansogotthis.github.io/berrybananaCheckers/" class="project-link demo-link">View Live Demo</a>
-                        <a href="https://github.com/Iansogotthis/berrybananaCheckers" class="project-link github-link"><img src="/images/git.jpg" alt="GitHub Logo" class="logo" style="width: 16px; height: 16px;"> View on GitHub</a>
-                    </div>
-                </div>
+      <h2>My Projects</h2>
+      <div class="project-container">
+        <div class="project-item">
+          <div class="project-image-container">
+            <img
+              src="/images/checkers.png"
+              alt="Project 1"
+              class="project-image"
+            />
+          </div>
+          <div class="project-details">
+            <h3>Project 1: Banana Berry Checkers</h3>
+            <p>Just a Cute Checkers Game</p>
+            <p>Technologies used: HTML, CSS, and JavaScript.</p>
+            <div class="project-links">
+              <a
+                href="https://iansogotthis.github.io/berrybananaCheckers/"
+                class="project-link demo-link"
+                >View Live Demo</a
+              >
+              <a
+                href="https://github.com/Iansogotthis/berrybananaCheckers"
+                class="project-link github-link"
+              >
+                <img
+                  src="/images/git.jpg"
+                  alt="GitHub Logo"
+                  class="logo"
+                  style="width: 12px; height: 12px"
+                />
+                View on GitHub
+              </a>
             </div>
-            <div class="project-item">
-                <div class="project-image-container">
-                    <img src="/images/rps.png" alt="Project 2" class="project-image">
-                </div>
-                <div class="project-details">
-                    <h3>Project 2: Rock Paper Scissors</h3>
-                    <p>Classic rock paper scissors</p>
-                    <p>Technologies used: HTML, CSS, JavaScript</p>
-                    <div class="project-links">
-                        <a href="https://codepen.io/Ian-the-styleful/full/yLwNNRo" class="project-link demo-link">View Live Demo</a>
-                        <a href="https://github.com/Iansogotthis/RockPaperScissors" class="project-link github-link"><img src="/images/git.jpg" alt="GitHub Logo" class="logo" style="width: 16px; height: 16px;"> View on GitHub</a>
-                    </div>
-                </div>
-            </div>
-            <!-- New Projects -->
-            <div class="project-item">
-                <div class="project-image-container">
-                    <img src="/images/storytime.png" alt="Project 3" class="project-image">
-                </div>
-                <div class="project-details">
-                    <h3>Project 3: VibeTimes</h3>
-                    <p>Story collecting/sharing blog</p>
-                    <h4>Technologies used:</h4>
-                    <ul>
-                        <li>React: A JavaScript library for building user interfaces.</li>
-                        <li>React Router: A collection of navigational components.</li>
-                        <li>Node.js: JavaScript runtime built engine.</li>
-                        <li>Express: The framework.</li>
-                        <li>Mongoose: My Object Data Modeling (ODM) library.</li>
-                        <li>MongoDB: chosen database.</li>
-                        <li>CSS: styling.</li>
-                    </ul>
-                    <div class="project-links">
-                        <a href="https://vibestime.onrender.com/" class="project-link demo-link">View Live Demo</a>
-                        <a href="https://github.com/Iansogotthis/ProjectThree" class="project-link github-link"><img src="/images/git.jpg" alt="GitHub Logo" class="logo" style="width: 16px; height: 16px;"> View on GitHub</a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-item">
-                <div class="project-image-container">
-                    <img src="/images/dest1.png" alt="Project 4" class="project-image">
-                </div>
-                <div class="project-details">
-                    <h3>Project 4: Destination</h3>
-                    <p>A travel and restaurant discovery app</p>
-                    <h4>Technologies used: </h4>
-                    <ol>
-                        <li>Django: A high-level Python web framework used for rapid development and clean, pragmatic design.</li>
-                        <li>HTML/CSS: Standard technologies for structuring and styling web pages.</li>
-                        <li>JavaScript: Used for interactive elements and enhancing user experience.</li>
-                        <li>Bootstrap: A front-end framework for developing responsive and mobile-first websites.</li>
-                        <li>SQLite: A lightweight relational database management system used for storing application data.</li>
-                        <li>Python: The primary programming language used for backend development and business logic.</li>
-                        <li>Git: Version control system for tracking changes in codebase and collaboration among developers.</li>
-                    </ol>
-                    <h4>Features</h4>
-                    <ol>
-                        <li>Listings: Browse a comprehensive list of restaurants, including their names, addresses, and descriptions.</li>
-                        <li>Photo Gallery: View photos associated with each restaurant and hotel to get a visual sense of the ambiance and cuisine.</li>
-                        <li>User Profiles: Create a personalized profile, add travelers, and share favorite restaurants and activities.</li>
-                        <li>Activity Listings: Discover various activities available in different cities, along with their descriptions.</li>
-                        <li>Hotel Listings: Explore a curated selection of hotels, including their names, addresses, and descriptions.</li>
-                    </ol>
-                    <div class="project-links">
-                        <a href="https://destination-htb7.onrender.com/" class="project-link demo-link">View Live Demo</a>
-                        <a href="https://github.com/Iansogotthis/destination" class="project-link github-link"><img src="/images/git.jpg" alt="GitHub Logo" class="logo" style="width: 16px; height: 16px;"> View on GitHub</a>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+        <div class="project-item">
+          <div class="project-image-container">
+            <img src="/images/rps.png" alt="Project 2" class="project-image" />
+          </div>
+          <div class="project-details">
+            <h3>Project 2: Rock Paper Scissors</h3>
+            <p>Classic rock paper scissors</p>
+            <p>Technologies used: HTML, CSS, JavaScript</p>
+            <div class="project-links">
+              <a
+                href="https://codepen.io/Ian-the-styleful/full/yLwNNRo"
+                class="project-link demo-link"
+                >View Live Demo</a
+              >
+              <a
+                href="https://github.com/Iansogotthis/RockPaperScissors"
+                class="project-link github-link"
+              >
+                <img
+                  src="/images/git.jpg"
+                  alt="GitHub Logo"
+                  class="logo"
+                  style="width: 12px; height: 12px"
+                />
+                View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- New Projects -->
+        <div class="project-item">
+          <div class="project-image-container">
+            <img
+              src="/images/storytime.png"
+              alt="Project 3"
+              class="project-image"
+            />
+          </div>
+          <div class="project-details">
+            <h3>Project 3: VibeTimes</h3>
+            <p>Story collecting/sharing blog</p>
+            <h4>Technologies used:</h4>
+            <ul>
+              <li>React: A JavaScript library for building user interfaces.</li>
+              <li>React Router: A collection of navigational components.</li>
+              <li>Node.js: JavaScript runtime built engine.</li>
+              <li>Express: The framework.</li>
+              <li>Mongoose: My Object Data Modeling (ODM) library.</li>
+              <li>MongoDB: chosen database.</li>
+              <li>CSS: styling.</li>
+            </ul>
+            <div class="project-links">
+              <a
+                href="https://vibestime.onrender.com/"
+                class="project-link demo-link"
+                >View Live Demo</a
+              >
+              <a
+                href="https://github.com/Iansogotthis/ProjectThree"
+                class="project-link github-link"
+              >
+                <img
+                  src="/images/git.jpg"
+                  alt="GitHub Logo"
+                  class="logo"
+                  style="width: 12px; height: 12px"
+                />
+                View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-image-container">
+            <img
+              src="/images/dest1.png"
+              alt="Project 4"
+              class="project-image"
+            />
+          </div>
+          <div class="project-details">
+            <h3>Project 4: Destination</h3>
+            <p>A travel and restaurant discovery app</p>
+            <h4>Technologies used:</h4>
+            <ol>
+              <li>
+                Django: A high-level Python web framework used for rapid
+                development and clean, pragmatic design.
+              </li>
+              <li>
+                HTML/CSS: Standard technologies for structuring and styling web
+                pages.
+              </li>
+              <li>
+                JavaScript: Used for interactive elements and enhancing user
+                experience.
+              </li>
+              <li>
+                Bootstrap: A front-end framework for developing responsive and
+                mobile-first websites.
+              </li>
+              <li>
+                SQLite: A lightweight relational database management system used
+                for storing application data.
+              </li>
+              <li>
+                Python: The primary programming language used for backend
+                development and business logic.
+              </li>
+              <li>
+                Git: Version control system for tracking changes in codebase and
+                collaboration among developers.
+              </li>
+            </ol>
+            <h4>Features</h4>
+            <ol>
+              <li>
+                Listings: Browse a comprehensive list of restaurants, including
+                their names, addresses, and descriptions.
+              </li>
+              <li>
+                Photo Gallery: View photos associated with each restaurant and
+                hotel to get a visual sense of the ambiance and cuisine.
+              </li>
+              <li>
+                User Profiles: Create a personalized profile, add travelers, and
+                share favorite restaurants and activities.
+              </li>
+              <li>
+                Activity Listings: Discover various activities available in
+                different cities, along with their descriptions.
+              </li>
+              <li>
+                Hotel Listings: Explore a curated selection of hotels, including
+                their names, addresses, and descriptions.
+              </li>
+            </ol>
+            <div class="project-links">
+              <a
+                href="https://destination-htb7.onrender.com/"
+                class="project-link demo-link"
+                >View Live Demo</a
+              >
+              <a
+                href="https://github.com/Iansogotthis/destination"
+                class="project-link github-link"
+              >
+                <img
+                  src="/images/git.jpg"
+                  alt="GitHub Logo"
+                  class="logo"
+                  style="width: 12px; height: 12px"
+                />
+                View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <section id="skills">
-        <h2>My Skills</h2>
-        <div class="skills-container">
-            <div class="skill-item">
-                <i class="skill-icon fab fa-html5"></i>
-                <h3>HTML</h3>
-                <p>Proficient in writing semantic and accessible HTML5 markup.</p>
-            </div>
-            <div class="skill-item">
-                <i class="skill-icon fab fa-css3-alt"></i>
-                <h3>CSS</h3>
-                <p>Experienced in creating responsive and visually appealing designs using CSS.</p>
-            </div>
-            <div class="skill-item">
-                <i class="skill-icon fab fa-js-square"></i>
-                <h3>JavaScript</h3>
-                <p>Skilled in developing dynamic and interactive web applications with JavaScript.</p>
-            </div>
+      <h2>My Skills</h2>
+      <div class="skills-container">
+        <div class="skill-item">
+          <i class="skill-icon fab fa-html5"></i>
+          <h3>HTML</h3>
+          <p>Proficient in writing semantic and accessible HTML5 markup.</p>
         </div>
-    
-        <h2>Other Skills</h2>
-        <div class="skills-container">
-            <div class="skill-item">
-                <h3>Django</h3>
-                <p>Have had experience with building web applications using the Django framework.</p>
-            </div>
-            <div class="skill-item">
-                <h3>React</h3>
-                <p>Have had experience with developing user interfaces using the React library.</p>
-            </div>
-            <div class="skill-item">
-                <h3>Python</h3>
-                <p>Have had experience with programming with Python for various applications.</p>
-            </div>
-            <div class="skill-item">
-                <h3>MongoDB</h3>
-                <p>Some knowledge in working with MongoDB for database management.</p>
-            </div>
+        <div class="skill-item">
+          <i class="skill-icon fab fa-css3-alt"></i>
+          <h3>CSS</h3>
+          <p>
+            Experienced in creating responsive and visually appealing designs
+            using CSS.
+          </p>
         </div>
+        <div class="skill-item">
+          <i class="skill-icon fab fa-js-square"></i>
+          <h3>JavaScript</h3>
+          <p>
+            Skilled in developing dynamic and interactive web applications with
+            JavaScript.
+          </p>
+        </div>
+      </div>
+
+      <h2>Other Skills</h2>
+      <div class="skills-container">
+        <div class="skill-item">
+          <h3>Django</h3>
+          <p>
+            Have had experience with building web applications using the Django
+            framework.
+          </p>
+        </div>
+        <div class="skill-item">
+          <h3>React</h3>
+          <p>
+            Have had experience with developing user interfaces using the React
+            library.
+          </p>
+        </div>
+        <div class="skill-item">
+          <h3>Python</h3>
+          <p>
+            Have had experience with programming with Python for various
+            applications.
+          </p>
+        </div>
+        <div class="skill-item">
+          <h3>MongoDB</h3>
+          <p>Some knowledge in working with MongoDB for database management.</p>
+        </div>
+      </div>
     </section>
 
     <section id="contact">
-        <h2>Get in Touch</h2>
-        <br/>
-        
-        <ul class="contact-links">
-            <li><a href="https://github.com/Iansogotthis">GitHub</a><img src="/images/git.jpg" alt="GitHub Logo" style="width: 12px; height: 12px;"></li>
-            <li><a href="http://www.linkedin.com/in/webdevwonder88">LinkedIn</a><img src="/images/linkd.png" alt="LinkedIn Logo" style="width: 16px; height: 16px;"></li>
-        </ul>
-        <br/>
-        <form class="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-    
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-    
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-    
-            <button type="submit" class="submit-button">Send Message</button>
-        </form>
-       
+      <h2>Get in Touch</h2>
+      <br />
+
+      <ul class="contact-links">
+        <li>
+          <a href="https://github.com/Iansogotthis">GitHub</a
+          ><img
+            src="/images/git.jpg"
+            alt="GitHub Logo"
+            style="width: 16px; height: 16px"
+          />
+        </li>
+        <li>
+          <a href="http://www.linkedin.com/in/webdevwonder88">LinkedIn</a
+          ><img
+            src="/images/linkd.png"
+            alt="LinkedIn Logo"
+            style="width: 16px; height: 16px"
+          />
+        </li>
+      </ul>
+      <br />
+      <div id="responseMessage"></div>
+      <form
+        class="contact-form"
+        id="contactForm"
+        action="/submit"
+        method="POST"
+      >
+        <label for="name">Name:</label>
+        <input
+          style="text-align: center; border: 2px solid white"
+          type="text"
+          id="name"
+          name="name"
+          class="feedback-input"
+          placeholder="Name"
+          required
+        />
+
+        <label for="email">Email:</label>
+        <input
+          style="text-align: center; border: 2px solid white"
+          type="email"
+          id="email"
+          name="email"
+          class="feedback-input"
+          placeholder="Email"
+          required
+        />
+
+        <label for="message">Message:</label>
+        <textarea
+          style="text-align: center; border: 2px solid white"
+          id="message"
+          name="message"
+          class="feedback-input"
+          placeholder="Comment"
+          required
+        ></textarea>
+
+        <button type="submit" class="submit-button">Send Message</button>
+      </form>
     </section>
     <footer>
-        <p>&copy; 2023 Your Name. All rights reserved.</p>
+      <p>&copy; 2024 Ian Mount. All rights reserved.</p>
     </footer>
-</body>
-
+   
+  
+    
+  </body>
 </html>
