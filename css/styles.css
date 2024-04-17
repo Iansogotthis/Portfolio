@@ -1,0 +1,464 @@
+/*******************************
+        Global Styles
+*******************************/
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/*******************************
+    Header and Navigation
+*******************************/
+header {
+    background-color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin: 0 1.5rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #e6e6e6;
+}
+
+/*******************************
+            Sections
+*******************************/
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+/*******************************
+         Home Section
+*******************************/
+#home {
+    text-align: center;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+#home h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+#home p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/*******************************
+         About Section
+*******************************/
+#about {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    margin-top: 2rem;
+}
+
+.about-card {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+}
+
+.about-card a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/*******************************
+        Projects Section
+*******************************/
+#projects {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+#projects .project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+}
+
+.project-item {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.project-image-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+    transform: scale(1.1);
+}
+
+.project-details {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-top: none;
+}
+
+.project-details h3 {
+    margin-top: 0;
+}
+
+.project-details p {
+    margin: 10px 0;
+}
+
+.project-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.project-details ul li {
+    padding-left: 20px;
+    position: relative;
+}
+
+.project-details ul li::before {
+    content: "\2022";
+    position: absolute;
+    left: 0;
+}
+
+.project-item h3 {
+    margin: 1.5rem 1.5rem 1rem;
+}
+
+.project-item p {
+    margin: 0 1.5rem 1.5rem;
+    color: #555;
+}
+
+.project-link {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin: 0 1.5rem 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #555;
+}
+
+/*******************************
+         Skills Section
+*******************************/
+#skills {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+#skills .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 2rem;
+}
+
+.skill-item {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.skill-icon {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.skill-item h3 {
+    margin-bottom: 1rem;
+}
+
+.skill-item p {
+    color: #555;
+}
+
+/*******************************
+        Contact Section
+*******************************/
+#contact {
+    background-color: #333;
+    color: #fff;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form textarea {
+    height: 150px;
+}
+
+/* Contact Section Styles */
+.contact-links {
+    display: flex; /* Use flexbox */
+    justify-content: space-evenly; /* Evenly space the items */
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+.contact-links li {
+    margin: 0 5px; /* Adjust margin between links */
+}
+
+.contact-links a {
+    font-family: Arial, sans-serif; /* Font family for the links */
+    font-size: 16px; /* Font size for the links */
+    color: #ffffff; /* Font color for the links */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.contact-links a:hover {
+    color: #555; /* Font color on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+.submit-button {
+    display: block;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #e6e6e6;
+}
+
+/*******************************
+         Employment Section
+*******************************/
+#employment .resume-section {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 2rem;
+    font-family: "Georgia", "Times New Roman"
+}
+
+#employment .resume-section h3 {
+    margin-top: 0;
+}
+
+#employment .resume-section hr {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+#employment .resume-section p {
+    margin: 0;
+}
+
+#employment .resume-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#employment .resume-section ul li {
+    padding-left: 20px;
+    position: relative;
+}
+
+#employment .resume-section ul li::before {
+    content: "\2022";
+    position: absolute;
+    left: 0;
+}
+
+/*******************************
+     Experience Section
+*******************************/
+#experience {
+    padding: 4rem 2rem;
+}
+
+#experience h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.resume-section {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 2rem;
+    font-family: "Georgia", "Times New Roman"
+}
+
+.resume-item {
+    margin-bottom: 2rem;
+}
+
+.resume-item h3 {
+    margin-top: 0;
+}
+
+.resume-item h4 {
+    margin-bottom: 0.5rem;
+}
+
+.resume-item p {
+    margin: 0;
+}
+
+.resume-item hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+/*******************************
+        Education Section
+*******************************/
+#education {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+#education h3{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+#education .resume-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#education .resume-item {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+#education .resume-item hr {
+    margin: 1rem auto;
+    width: 50%;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+#education .resume-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+#education .resume-item p {
+    font-size: 1.2rem;
+    color: #777;
+}
+
+#education .resume-item p strong {
+    font-weight: bold;
+}
+
+#education .resume-item:last-child {
+    margin-bottom: 0;
+}
+
+/*******************************
+             Footer
+*******************************/
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+}
