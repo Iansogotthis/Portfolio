@@ -5,8 +5,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color:#e9af52f1;
-    
+    background-color: #e9af52f1; /* Used from styles.css */
 }
 
 /*******************************
@@ -211,6 +210,7 @@ section {
 .project-link:hover {
     background-color: #555;
 }
+
 .project-container {
     width: 500px;
     overflow: hidden;
@@ -299,94 +299,6 @@ section {
 .contact-form textarea {
     height: 150px;
 }
-form { max-width: 420px; margin: 50px auto; }
-
-.feedback-input {
-  color: white;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  border-radius: 5px;
-  line-height: 22px;
-  background-color: transparent;
-  border: 2px solid #7c7c7c; /* Dark gray color for borders */
-  transition: all 0.3s;
-  padding: 13px;
-  margin-bottom: 15px;
-  width: 100%;
-  box-sizing: border-box;
-  outline: 0;
-}
-
-.feedback-input:focus { border: 2px solid #555; /* Slightly lighter gray color on focus */ }
-
-textarea {
-  height: 150px;
-  line-height: 150%;
-  resize: vertical;
-}
-
-[type="submit"] {
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-  width: 100%;
-  background: #555; /* Dark gray color for the button background */
-  border-radius: 5px;
-  border: 0;
-  cursor: pointer;
-  color: white;
-  font-size: 24px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  transition: all 0.3s;
-  margin-top: -4px;
-  font-weight: 700;
-}
-[type="submit"]:hover { background: #777; /* Slightly lighter gray color on hover */ }
-
-#responseMessage {
-  border-radius: 5px;
-  color: #fff;
-  font-size: 20px;
-  text-align: center;
-  /* max-width: 200px; */
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#responseMessage.success {
-  color: #008000; /* Green background for success */
-}
-
-#responseMessage.error {
-  color: #FF0000; /* Red background for errors */
-}
-
-#responseMessage.show {
-  opacity: 1;
-}
-/* Contact Section Styles */
-.contact-links {
-    display: flex; /* Use flexbox */
-    justify-content: space-evenly; /* Evenly space the items */
-    list-style: none; /* Remove bullet points */
-    padding: 0; /* Remove default padding */
-}
-
-.contact-links li {
-    margin: 0 5px; /* Adjust margin between links */
-}
-
-.contact-links a {
-    font-family: Arial, sans-serif; /* Font family for the links */
-    font-size: 16px; /* Font size for the links */
-    color: #ffffff; /* Font color for the links */
-    text-decoration: none; /* Remove underline from links */
-}
-
-.contact-links a:hover {
-    color: #555; /* Font color on hover */
-    text-decoration: underline; /* Underline on hover */
-}
 
 .submit-button {
     display: block;
@@ -405,14 +317,25 @@ textarea {
 }
 
 /*******************************
-         Employment Section
+             Footer
+*******************************/
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/*******************************
+        Employment Section
 *******************************/
 #employment .resume-section {
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 2rem;
-    font-family: "Georgia", "Times New Roman"
+    font-family: "Georgia", "Times New Roman";
 }
 
 #employment .resume-section h3 {
@@ -458,14 +381,6 @@ textarea {
     margin-bottom: 3rem;
 }
 
-.resume-section {
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 2rem;
-    font-family: "Georgia", "Times New Roman"
-}
-
 .resume-item {
     margin-bottom: 2rem;
 }
@@ -496,10 +411,12 @@ textarea {
     padding: 4rem 2rem;
     text-align: center;
 }
+
 #education h3{
     text-align: center;
     margin-bottom: 3rem;
 }
+
 #education .resume-section {
     max-width: 800px;
     margin: 0 auto;
@@ -536,13 +453,126 @@ textarea {
     margin-bottom: 0;
 }
 
-/*******************************
-             Footer
-*******************************/
-footer {
-    background-color: #333;
+/* Contact Section Styles */
+.contact-links {
+    display: flex; /* Use flexbox */
+    justify-content: space-evenly; /* Evenly space the items */
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+.contact-links li {
+    margin: 0 5px; /* Adjust margin between links */
+}
+
+.contact-links a {
+    font-family: Arial, sans-serif; /* Font family for the links */
+    font-size: 16px; /* Font size for the links */
+    color: #ffffff; /* Font color for the links */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.contact-links a:hover {
+    color: #555; /* Font color on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+#responseMessage {
+    border-radius: 5px;
     color: #fff;
+    font-size: 20px;
     text-align: center;
-    padding: 1.5rem;
-    font-size: 0.9rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#responseMessage.success {
+    color: #008000; /* Green background for success */
+}
+
+#responseMessage.error {
+    color: #FF0000; /* Red background for errors */
+}
+
+#responseMessage.show {
+    opacity: 1;
+}
+
+/*******************************
+         Additional Styles
+*******************************/
+/* Used from styles2.css */
+.header {
+    background-color: #ebdcdc;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.main-content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.achievements,
+.favorite-things,
+.projects {
+    margin-bottom: 30px;
+}
+
+.achievements h2,
+.favorite-things h2,
+.projects h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+a {
+    color: #008CBA;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #006687;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    width: 33.33%;
+    height: 100px;
+    border: 1px solid #ccc;
+    position: relative;
+    cursor: pointer;
+}
+
+td:hover::before {
+    content: attr(data-content);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 5px;
 }
