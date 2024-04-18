@@ -5,7 +5,8 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #e9af52f1; /* Used from styles.css */
+    background-image: url(/images/background.jpg);
+    background-size: cover;
 }
 
 /*******************************
@@ -271,7 +272,7 @@ section {
         Contact Section
 *******************************/
 #contact {
-    background-color: #525875;
+    background-color: #333;
     color: #fff;
 }
 
