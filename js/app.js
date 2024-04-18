@@ -1,4 +1,3 @@
-
 const navMenu = document.getElementById('nav-menu');
 const aboutCardsContainer = document.querySelector('.about-cards-container');
 
