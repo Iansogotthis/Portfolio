@@ -1,4 +1,3 @@
-
 const navMenu = document.getElementById('nav-menu');
 const aboutCardsContainer = document.querySelector('.about-cards-container');
 
@@ -93,3 +92,13 @@ if (window.location.pathname === '/index.html' || window.location.pathname === '
 
 renderNavMenu();
 renderAboutCards();
+
+// Responsive sidebar navigation for index.html
+const toggleBtn = document.createElement('button');
+toggleBtn.innerHTML = '&#9776;'; // Hamburger icon
+toggleBtn.classList.add('sidebar-toggle');
+toggleBtn.onclick = function() {
+  navMenu.classList.toggle('active');
+};
+
+document.body.appendChild(toggleBtn);

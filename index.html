@@ -9,6 +9,7 @@
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script> -->
     <script defer src="/js/app.js"></script>
     <!-- <py-script src="/app.py"></py-script> -->
+    
   </head>
 
   <body>
@@ -380,5 +381,13 @@
     <footer>
       <p>&copy; 2024 Ian Mount. All rights reserved.</p>
     </footer>
+    <button class="sidebar-toggle" onclick="toggleSidebar()">&#9776;</button>
+    <script>
+      // Toggle sidebar function
+      function toggleSidebar() {
+        const navMenu = document.getElementById('nav-menu');
+        navMenu.classList.toggle('active');
+      }
+    </script>
   </body>
 </html>
