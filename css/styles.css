@@ -192,18 +192,22 @@ section {
   text-align: center;
 }
 
-#projects .project-container {
+
+.project-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1.5fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 1rem;
+  justify-content: center; /* Center the grid horizontally */
 }
 
 .project-item {
+  margin: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
-  max-width: 0 auto;
+  max-width: 100%; /* Allow items to expand to full width */
 }
+
 
 .project-image-container {
   overflow: hidden;
