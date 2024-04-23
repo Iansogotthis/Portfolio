@@ -669,42 +669,60 @@ footer {
     animation: slideAndSpin 10s linear infinite; /* Combined animation for sliding and spinning */
   }
   
-  .red {
-    border-top-color: red; /* Customize the color of the spinning wheel */
-    animation-direction: alternate; /* Reverse the animation direction for odd-indexed spinners */
+  .red-circle {
+    background-color: #ff6347; /* Reddish color */
+    animation: slideAndSpinCircle 10s linear infinite, spin 8s linear infinite; /* Combined animations for sliding and spinning */
   }
   
-  .green {
-    border-top-color: green;
+  .green-circle {
+    background-color: #2e8b57; /* Dark green color */
+    animation: slideAndSpinCircle 12s linear infinite, spin 10s linear infinite; /* Combined animations for sliding and spinning */
   }
   
-  .blue {
-    border-top-color: blue;
-    animation-direction: alternate; /* Reverse the animation direction for odd-indexed spinners */
+  .blue-circle {
+    background-color: #4682b4; /* Steel blue color */
+    animation: slideAndSpinCircle 14s linear infinite, spin 12s linear infinite; /* Combined animations for sliding and spinning */
   }
   
-  .yellow {
-    border-top-color: yellow;
+  .yellow-circle {
+    background-color: #ffd700; /* Gold color */
+    animation: slideAndSpinCircle 16s linear infinite, spin 14s linear infinite; /* Combined animations for sliding and spinning */
   }
   
-  .orange {
-    border-top-color: orange;
-    animation-direction: alternate; /* Reverse the animation direction for odd-indexed spinners */
+  .orange-circle {
+    background-color: #ff8c00; /* Dark orange color */
+    animation: slideAndSpinCircle 18s linear infinite, spin 16s linear infinite; /* Combined animations for sliding and spinning */
   }
   
-  .purple {
-    border-top-color: purple;
+  .brown-circle {
+    background-color: #8b4513; /* Saddle brown color */
+    animation: slideAndSpinCircle 20s linear infinite, spin 18s linear infinite; /* Combined animations for sliding and spinning */
   }
+
   
-  @keyframes slideAndSpin {
+  
+  
+  @keyframes slideAndSpinCircle {
+  0% {
+    transform: translateX(-50vw) rotate(0deg); /* Start from the left edge of the viewport */
+  }
+  50% {
+    transform: translateX(50vw) rotate(1800deg); /* Move to the right edge of the viewport while spinning */
+  }
+  100% {
+    transform: translateX(-50vw) rotate(3600deg); /* Return to the left edge of the viewport while spinning */
+  }
+}
+  
+  @keyframes slideAlternate {
     0% {
-      transform: translateX(-50vw) rotate(0deg); /* Start from the left edge of the viewport */
+      transform: translateY(-50vh);
     }
     50% {
-      transform: translateX(50vw) rotate(1800deg); /* Move to the right edge of the viewport while spinning */
+      transform: translateY(50vh);
     }
     100% {
-      transform: translateX(-50vw) rotate(3600deg); /* Return to the left edge of the viewport while spinning */
+      transform: translateY(-50vh);
     }
   }
 
@@ -725,33 +743,36 @@ footer {
   animation: slideAndSpin 10s linear infinite; /* Combined animation for sliding and spinning */
 }
 
-.red {
-  border-bottom-color: red; /* Customize the color of the triangle */
-  animation-direction: alternate; /* Reverse the animation direction for odd-indexed triangles */
+
+.red-triangle {
+  border-bottom-color: #ff6347; /* Reddish color */
+  animation: slideAndSpin 10s linear infinite, slideAlternate 15s linear infinite; /* Combined animations for sliding and spinning */
 }
 
-.green {
-  border-bottom-color: green;
+.green-triangle {
+  border-bottom-color: #2e8b57; /* Dark green color */
+  animation: slideAndSpin 12s linear infinite, slideAlternate 14s linear infinite; /* Combined animations for sliding and spinning */
 }
 
-.blue {
-  border-bottom-color: blue;
-  animation-direction: alternate; /* Reverse the animation direction for odd-indexed triangles */
+.blue-triangle {
+  border-bottom-color: #4682b4; /* Steel blue color */
+  animation: slideAndSpin 14s linear infinite, slideAlternate 12s linear infinite; /* Combined animations for sliding and spinning */
 }
 
-.yellow {
-  border-bottom-color: yellow;
+.yellow-triangle {
+  border-bottom-color: #ffd700; /* Gold color */
+  animation: slideAndSpin 16s linear infinite, slideAlternate 11s linear infinite; /* Combined animations for sliding and spinning */
 }
 
-.orange {
-  border-bottom-color: orange;
-  animation-direction: alternate; /* Reverse the animation direction for odd-indexed triangles */
+.orange-triangle {
+  border-bottom-color: #ff8c00; /* Dark orange color */
+  animation: slideAndSpin 18s linear infinite, slideAlternate 10s linear infinite; /* Combined animations for sliding and spinning */
 }
 
-.purple {
-  border-bottom-color: purple;
+.brown-triangle {
+  border-bottom-color: #8b4513; /* Saddle brown color */
+  animation: slideAndSpin 20s linear infinite, slideAlternate 9s linear infinite; /* Combined animations for sliding and spinning */
 }
-
 @keyframes slideAndSpin {
   0% {
     transform: translateX(-50vw) rotate(0deg); /* Start from the left edge of the viewport */
@@ -762,4 +783,63 @@ footer {
   100% {
     transform: translateX(-50vw) rotate(3600deg); /* Return to the left edge of the viewport while spinning */
   }
+}
+
+@keyframes slideAlternate {
+  0% {
+    transform: translateY(-50vh);
+  }
+  50% {
+    transform: translateY(50vh);
+  }
+  100% {
+    transform: translateY(-50vh);
+  }
+}
+
+/* Triangles */
+.triangle-up,
+.triangle-down,
+.triangle-left,
+.triangle-right {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+}
+
+.triangle-up {
+    border-width: 0 10px 15px 10px;
+    border-color: transparent transparent #333 transparent;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 100%;
+    z-index: -4; /* Place the triangle behind other elements */
+}
+
+.triangle-down {
+    border-width: 15px 10px 0 10px;
+    border-color: #333 transparent transparent transparent;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    z-index: -4; /* Place the triangle behind other elements */
+}
+
+.triangle-left {
+    border-width: 10px 15px 10px 0;
+    border-color: transparent #333 transparent transparent;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 100%;
+    z-index: -4; /* Place the triangle behind other elements */
+}
+
+.triangle-right {
+    border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent #333;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100%;
+    z-index: -4; /* Place the triangle behind other elements */
 }

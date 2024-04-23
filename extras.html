@@ -1,187 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <script defer src="/js/app.js"></script>
-    <title>Extras</title>
-    <style>
-      /* Styles for the whole body */
-      body {
-        background-image: url('/images/grady.jpg');
-        background-size:cover;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh; /* Ensure the body takes up the full viewport height */
-        margin: 0; /* Remove default margin */
-        font-family: Arial, sans-serif; /* Optional: Choose your preferred font */
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script defer src="/js/app.js"></script>
+  <title>Extras</title>
+  <style>
+    /* Styles for the whole body */
+    body {
+      background-image: url('/images/grady.jpg');
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh; /* Ensure the body takes up the full viewport height */
+      margin: 0; /* Remove default margin */
+      font-family: Arial, sans-serif; /* Optional: Choose your preferred font */
+    }
 
-      /* Additional styles for the main content */
-      main {
-        text-align: center; /* Center-align the content inside the main element */
-        margin-top: 20px; /* Optional: Add some top margin */
-      }
+    /* Additional styles for the main content */
+    main {
+      text-align: center; /* Center-align the content inside the main element */
+      margin-top: 20px; /* Optional: Add some top margin */
+    }
 
-      table {
-        width: 100%;
-        border-collapse: collapse;
-      }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
 
-      td {
-        width: 33.33%;
-        height: 100px;
-        border: 2px solid #3fa311be;
-        position: relative;
-        cursor: pointer;
-        /* Add transition for smoother effect */
-        transition: background-color 0.3s ease;
-      }
+    td {
+      width: 33.33%;
+      height: 100px;
+      border: 2px solid #3fa311be;
+      position: relative;
+      cursor: pointer;
+      /* Add transition for smoother effect */
+      transition: background-color 0.3s ease;
+    }
 
-      td::before {
-        content: attr(data-category); /* Show category by default */
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 14px; /* Adjust font size */
-        font-weight: bold;
-        color: #3faab9; /* Change color */
-        background-color: rgba(
-          168,
-          100,
-          4,
-          0.792
-        ); /* Change background color */
-        padding: 5px 10px;
-        border-radius: 5px;
-        z-index: -1; /* Move behind table cell */
-        pointer-events: none; /* Ensure it doesn't interfere with hover */
-        transition: opacity 0.3s ease; /* Add transition for smoother effect */
-      }
+    td::before {
+      content: attr(data-category); /* Show category by default */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 14px; /* Adjust font size */
+      font-weight: bold;
+      color: #3faab9; /* Change color */
+      background-color: rgba(168, 100, 4, 0.792); /* Change background color */
+      padding: 5px 10px;
+      border-radius: 5px;
+      z-index: -1; /* Move behind table cell */
+      pointer-events: none; /* Ensure it doesn't interfere with hover */
+      transition: opacity 0.3s ease; /* Add transition for smoother effect */
+    }
 
-      td:hover::before {
-        content: attr(data-example); /* Show example on hover */
-        color: #62b93f; /* Change color */
-        background-color: rgba(
-          255,
-          247,
-          0,
-          0.892
-        ); /* Change background color */
-      }
+    td:hover::before {
+      content: attr(data-example); /* Show example on hover */
+      color: #62b93f; /* Change color */
+      background-color: rgba(255, 247, 0, 0.892); /* Change background color */
+    }
 
-      /* Additional styles for the Achievements section */
-      #achievements {
-        background-color: #f0f0f0;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-top: 20px;
-      }
+    /* Additional styles for the Achievements section */
+    #achievements {
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
 
-      #achievements h2 {
-        font-size: 24px;
-        margin-bottom: 10px;
-        color: #333;
-        text-transform: uppercase;
-        border-bottom: 2px solid #333;
-        padding-bottom: 5px;
-      }
+    #achievements h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #333;
+      text-transform: uppercase;
+      border-bottom: 2px solid #333;
+      padding-bottom: 5px;
+    }
 
-      #achievements ul {
-        text-align: left;
-        margin-top: 20px;
-      }
+    #achievements ul {
+      text-align: left;
+      margin-top: 20px;
+    }
 
-      #achievements li {
-        font-size: 18px;
-        margin-bottom: 10px;
-        line-height: 1.5;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <nav id="nav-menu"></nav>
-    </header>
+    #achievements li {
+      font-size: 18px;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav id="nav-menu"></nav>
+  </header>
 
-    <main>
-      <h1 style="text-align: center">Extras</h1>
-      <h2 style="text-align: center">Fun Tidbits</h2>
-      
-      <div class="spinner-container">
-        <div class="spinner red"></div>
-        <div class="spinner green"></div>
-        <div class="spinner blue"></div>
-        <div class="spinner yellow"></div>
-        <div class="spinner orange"></div>
-        <div class="spinner purple"></div>
-      </div>
-      <section id="favorite-things">
-        <h2>Favorite Things</h2>
-        <table>
-          <tbody>
-            <tr>
-              <td
-                data-category="Favorite Movie"
-                data-example="Monty Python and the Holy GRail"
-              ></td>
-              <td
-                data-category="Favorite Book"
-                data-example="Harry Potter"
-              ></td>
-              <td data-category="Favorite Song" data-example="Vienna "></td>
-            </tr>
-            <tr>
-              <td data-category="Favorite Food" data-example="cheesecake"></td>
-              <td data-category="Favorite Color" data-example="orange"></td>
-              <td data-category="Favorite Animal" data-example="Cat"></td>
-            </tr>
-            <tr>
-              <td
-                data-category="Favorite Place"
-                data-example="Anywhere New"
-              ></td>
-              <td data-category="Favorite Sport" data-example="Soccer"></td>
-              <td data-category="Favorite Hobby" data-example="Singing"></td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+  <main>
+    <h1 style="text-align: center">Extras</h1>
+    <h2 style="text-align: center">Fun Tidbits</h2>
+    
+    <div class="spinner-container">
+      <div class="spinner red-circle"></div>
+      <div class="spinner green-circle"></div>
+      <div class="spinner blue-circle"></div>
+      <div class="spinner yellow-circle"></div>
+      <div class="spinner orange-circle"></div>
+      <div class="spinner brown-circle"></div>
+    </div>
+    
+    <section id="favorite-things">
+      <h2>Favorite Things</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td
+              data-category="Favorite Movie"
+              data-example="Monty Python and the Holy GRail"
+            ></td>
+            <td
+              data-category="Favorite Book"
+              data-example="Harry Potter"
+            ></td>
+            <td data-category="Favorite Song" data-example="Vienna "></td>
+          </tr>
+          <tr>
+            <td data-category="Favorite Food" data-example="cheesecake"></td>
+            <td data-category="Favorite Color" data-example="orange"></td>
+            <td data-category="Favorite Animal" data-example="Cat"></td>
+          </tr>
+          <tr>
+            <td
+              data-category="Favorite Place"
+              data-example="Anywhere New"
+            ></td>
+            <td data-category="Favorite Sport" data-example="Soccer"></td>
+            <td data-category="Favorite Hobby" data-example="Singing"></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-      <div class="triangle-container">
-        <div class="triangle red"></div>
-        <div class="triangle green"></div>
-        <div class="triangle blue"></div>
-        <div class="triangle yellow"></div>
-        <div class="triangle orange"></div>
-        <div class="triangle purple"></div>
-      </div>
+    <div class="triangle-container">
+      <div class="triangle red-triangle"></div>
+      <div class="triangle green-triangle"></div>
+      <div class="triangle blue-triangle"></div>
+      <div class="triangle yellow-triangle"></div>
+      <div class="triangle orange-triangle"></div>
+      <div class="triangle brown-triangle"></div>
+    </div>
 
-      
-      <section id="achievements">
-        <h2>Achievements</h2>
-        <p>Here are some of my achievements:</p>
-        <ul>
-          <li>
-            At 22, I wrote, presented and actualized a new administrative
-            training policy and implemented a franchise-wide change in
-            mentorship methods for the franchise of restaurants I worked for
-          </li>
-          <li>
-            I have recently Completed a web development boot camp and Created this
-            portfolio of web development projects
-          </li>
-        </ul>
-      </section>
-    </main>
+    
+    <section id="achievements">
+      <h2>Achievements</h2>
+      <p>Here are some of my achievements:</p>
+      <ul>
+        <li>
+          At 22, I wrote, presented and actualized a new administrative
+          training policy and implemented a franchise-wide change in
+          mentorship methods for the franchise of restaurants I worked for
+        </li>
+        <li>
+          I have recently Completed a web development boot camp and Created this
+          portfolio of web development projects
+        </li>
+      </ul>
+    </section>
+    
+  </main>
 
-    <footer>
-      <p>&copy; 2024 Ian Mount. All rights reserved.</p>
-    </footer>
-  </body>
+  <footer>
+    <p>&copy; 2024 Ian Mount. All rights reserved.</p>
+  </footer>
+  <script></script>
+</body>
 </html>
