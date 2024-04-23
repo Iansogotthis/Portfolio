@@ -93,6 +93,23 @@
       line-height: 1.5;
     }
   </style>
+  <style>
+    .board {
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 100px);
+    }
+
+    .cell {
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        cursor: pointer;
+    }
+</style>
+
 </head>
 <body>
   <header>
@@ -100,8 +117,9 @@
   </header>
 
   <main>
+   <body> 
     <h1 style="text-align: center">Extras</h1>
-    <h2 style="text-align: center">Fun Tidbits</h2>
+    <h2 style="text-align: center">Just a page with some fun tidbits about myself</h2>
     
     <div class="spinner-container">
       <div class="spinner red-circle"></div>
@@ -171,10 +189,90 @@
     </section>
     
   </main>
+  <section id="tic-tac-toe" style="margin-top: 50px;">
+    <h2 style="text-align: center;">Tic Tac Toe</h2>
+    <div class="tic-tac-toe-board">
+      <div class="board-row">
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+      </div>
+      <div class="board-row">
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+      </div>
+      <div class="board-row">
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+      </div>
+    </div>
+  </section>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const board = document.getElementById('board');
+        const cells = document.querySelectorAll('.cell');
+        let currentPlayer = 'X';
+        let gameStatus = ['','','','','','','','',''];
+
+        cells.forEach(cell => {
+            cell.addEventListener('click', () => {
+                const index = parseInt(cell.getAttribute('data-index'));
+                if (gameStatus[index] === '' && !isGameOver()) {
+                    cell.textContent = currentPlayer;
+                    gameStatus[index] = currentPlayer;
+                    if (checkWinner(currentPlayer)) {
+                        alert(`${currentPlayer} wins!`);
+                        resetGame();
+                    } else if (isBoardFull()) {
+                        alert("It's a tie!");
+                        resetGame();
+                    } else {
+                        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                    }
+                }
+            });
+        });
+
+        function checkWinner(player) {
+            const winningCombos = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8],
+                [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                [0, 4, 8], [2, 4, 6]
+            ];
+            return winningCombos.some(combo => {
+                return combo.every(index => gameStatus[index] === player);
+            });
+        }
+
+        function isBoardFull() {
+            return gameStatus.every(cell => cell !== '');
+        }
+
+        function isGameOver() {
+            return checkWinner('X') || checkWinner('O') || isBoardFull();
+        }
+
+        function resetGame() {
+            gameStatus = ['','','','','','','','',''];
+            cells.forEach(cell => cell.textContent = '');
+            currentPlayer = 'X';
+        }
+    });
+</script>
+<div class="spinner-container">
+  <div class="spinner red-circle"></div>
+  <div class="spinner green-circle"></div>
+  <div class="spinner blue-circle"></div>
+  <div class="spinner yellow-circle"></div>
+  <div class="spinner orange-circle"></div>
+  <div class="spinner brown-circle"></div>
+</div>
   <footer>
     <p>&copy; 2024 Ian Mount. All rights reserved.</p>
   </footer>
-  <script></script>
+ 
 </body>
 </html>
