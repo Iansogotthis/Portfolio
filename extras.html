@@ -1,179 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <script defer src="/js/app.js"></script>
-    <title>Extras</title>
-    <style>
-      /* Styles for the whole body */
-      body {
-        background-image: url('/images/grady.jpg');
-        background-size:cover;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script defer src="/js/app.js"></script>
+  <title>Extras</title>
+  <style>
+    /* Styles for the whole body */
+    body {
+      background-image: url('/images/grady.jpg');
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh; /* Ensure the body takes up the full viewport height */
+      margin: 0; /* Remove default margin */
+      font-family: Arial, sans-serif; /* Optional: Choose your preferred font */
+    }
+
+    /* Additional styles for the main content */
+    main {
+      text-align: center; /* Center-align the content inside the main element */
+      margin-top: 20px; /* Optional: Add some top margin */
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td {
+      width: 33.33%;
+      height: 100px;
+      border: 2px solid #3fa311be;
+      position: relative;
+      cursor: pointer;
+      /* Add transition for smoother effect */
+      transition: background-color 0.3s ease;
+    }
+
+    td::before {
+      content: attr(data-category); /* Show category by default */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 14px; /* Adjust font size */
+      font-weight: bold;
+      color: #3faab9; /* Change color */
+      background-color: rgba(168, 100, 4, 0.792); /* Change background color */
+      padding: 5px 10px;
+      border-radius: 5px;
+      z-index: -1; /* Move behind table cell */
+      pointer-events: none; /* Ensure it doesn't interfere with hover */
+      transition: opacity 0.3s ease; /* Add transition for smoother effect */
+    }
+
+    td:hover::before {
+      content: attr(data-example); /* Show example on hover */
+      color: #62b93f; /* Change color */
+      background-color: rgba(255, 247, 0, 0.892); /* Change background color */
+    }
+
+    /* Additional styles for the Achievements section */
+    #achievements {
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    #achievements h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #333;
+      text-transform: uppercase;
+      border-bottom: 2px solid #333;
+      padding-bottom: 5px;
+    }
+
+    #achievements ul {
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    #achievements li {
+      font-size: 18px;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+  </style>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .calculator {
+      width: 300px;
+      margin: 50px auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      background-color: #f9f9f9;
+    }
+
+    .calculator input[type="button"] {
+      width: 70px;
+      height: 50px;
+      margin: 5px;
+      font-size: 1.2rem;
+    }
+
+    .calculator input[type="text"] {
+      width: 95%;
+      height: 50px;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      text-align: right;
+      padding: 5px;
+    }
+  </style>
+  <style>
+    .board {
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 100px);
+    }
+
+    .cell {
+        border: 1px solid black;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
-        min-height: 100vh; /* Ensure the body takes up the full viewport height */
-        margin: 0; /* Remove default margin */
-        font-family: Arial, sans-serif; /* Optional: Choose your preferred font */
-      }
-
-      /* Additional styles for the main content */
-      main {
-        text-align: center; /* Center-align the content inside the main element */
-        margin-top: 20px; /* Optional: Add some top margin */
-      }
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-
-      td {
-        width: 33.33%;
-        height: 100px;
-        border: 2px solid #3fa311be;
-        position: relative;
-        cursor: pointer;
-        /* Add transition for smoother effect */
-        transition: background-color 0.3s ease;
-      }
-
-      td::before {
-        content: attr(data-category); /* Show category by default */
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 14px; /* Adjust font size */
-        font-weight: bold;
-        color: #3faab9; /* Change color */
-        background-color: rgba(
-          168,
-          100,
-          4,
-          0.792
-        ); /* Change background color */
-        padding: 5px 10px;
-        border-radius: 5px;
-        z-index: -1; /* Move behind table cell */
-        pointer-events: none; /* Ensure it doesn't interfere with hover */
-        transition: opacity 0.3s ease; /* Add transition for smoother effect */
-      }
-
-      td:hover::before {
-        content: attr(data-example); /* Show example on hover */
-        color: #62b93f; /* Change color */
-        background-color: rgba(
-          255,
-          247,
-          0,
-          0.892
-        ); /* Change background color */
-      }
-
-      /* Additional styles for the Achievements section */
-      #achievements {
-        background-color: #f0f0f0;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-top: 20px;
-      }
-
-      #achievements h2 {
+        justify-content: center;
         font-size: 24px;
-        margin-bottom: 10px;
-        color: #333;
-        text-transform: uppercase;
-        border-bottom: 2px solid #333;
-        padding-bottom: 5px;
-      }
+        cursor: pointer;
+    }
+</style>
 
-      #achievements ul {
-        text-align: left;
-        margin-top: 20px;
-      }
+</head>
+<body>
+  <header>
+    <nav id="nav-menu"></nav>
+  </header>
 
-      #achievements li {
-        font-size: 18px;
-        margin-bottom: 10px;
-        line-height: 1.5;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <nav id="nav-menu"></nav>
-    </header>
+  <main>
+    <h1 style="text-align: center">Extras</h1>
+    <h2 style="text-align: center">Just a page with some fun tidbits about myself</h2>
+    
+    <div class="spinner-container">
+      <div class="spinner red-circle"></div>
+      <div class="spinner green-circle"></div>
+      <div class="spinner blue-circle"></div>
+      <div class="spinner yellow-circle"></div>
+      <div class="spinner orange-circle"></div>
+      <div class="spinner brown-circle"></div>
+    </div>
+    
+    <section id="favorite-things">
+      <h2>Favorite Things</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td
+              data-category="Favorite Movie"
+              data-example="Monty Python and the Holy GRail"
+            ></td>
+            <td
+              data-category="Favorite Book"
+              data-example="Harry Potter"
+            ></td>
+            <td data-category="Favorite Song" data-example="Vienna "></td>
+          </tr>
+          <tr>
+            <td data-category="Favorite Food" data-example="cheesecake"></td>
+            <td data-category="Favorite Color" data-example="orange"></td>
+            <td data-category="Favorite Animal" data-example="Cat"></td>
+          </tr>
+          <tr>
+            <td
+              data-category="Favorite Place"
+              data-example="Anywhere New"
+            ></td>
+            <td data-category="Favorite Sport" data-example="Soccer"></td>
+            <td data-category="Favorite Hobby" data-example="Singing"></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-    <main>
-      <h1 style="text-align: center">Extras</h1>
-      <h2 style="text-align: center">Fun Tidbits</h2>
+    <div class="triangle-container">
+      <div class="triangle red-triangle"></div>
+      <div class="triangle green-triangle"></div>
+      <div class="triangle blue-triangle"></div>
+      <div class="triangle yellow-triangle"></div>
+      <div class="triangle orange-triangle"></div>
+      <div class="triangle brown-triangle"></div>
+    </div>
 
-      <section id="favorite-things">
-        <h2>Favorite Things</h2>
-        <table>
-          <tbody>
-            <tr>
-              <td
-                data-category="Favorite Movie"
-                data-example="Monty Python and the Holy GRail"
-              ></td>
-              <td
-                data-category="Favorite Book"
-                data-example="Harry Potter"
-              ></td>
-              <td data-category="Favorite Song" data-example="Vienna "></td>
-            </tr>
-            <tr>
-              <td data-category="Favorite Food" data-example="cheesecake"></td>
-              <td data-category="Favorite Color" data-example="orange"></td>
-              <td data-category="Favorite Animal" data-example="Cat"></td>
-            </tr>
-            <tr>
-              <td
-                data-category="Favorite Place"
-                data-example="Anywhere New"
-              ></td>
-              <td data-category="Favorite Sport" data-example="Soccer"></td>
-              <td data-category="Favorite Hobby" data-example="Singing"></td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+    
+    <section id="achievements">
+      <h2>Achievements</h2>
+      <p>Here are some of my achievements:</p>
+      <ul>
+        <li>
+          At 22, I wrote, presented and actualized a new administrative
+          training policy and implemented a franchise-wide change in
+          mentorship methods for the franchise of restaurants I worked for
+        </li>
+        <li>
+          I have recently Completed a web development boot camp and Created this
+          portfolio of web development projects
+        </li>
+      </ul>
+    </section>
+    
+  </main>
+  <section id="tic-tac-toe" style="margin-top: 50px;">
+    <h2 style="text-align: center;">Tic Tac Toe</h2>
+    <div class="tic-tac-toe-board">
+      <div class="board-row">
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+      </div>
+      <div class="board-row">
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+      </div>
+      <div class="board-row">
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+      </div>
+    </div>
+  </section>
 
-      <section id="projects">
-        <h2>Projects</h2>
-        <p>Here are some of my web development projects:</p>
-        <ul>
-          <li><a href="https://example.com/project1">Project 1</a></li>
-          <li><a href="https://example.com/project2">Project 2</a></li>
-          <li><a href="https://example.com/project3">Project 3</a></li>
-        </ul>
-      </section>
+  <section class="calculator">
+    <h2 style="text-align: center;">Calculator</h2>
+    <input type="text" id="display">
+    <input type="button" value="7" onclick="appendToDisplay('7')">
+    <input type="button" value="8" onclick="appendToDisplay('8')">
+    <input type="button" value="9" onclick="appendToDisplay('9')">
+    <input type="button" value="4" onclick="appendToDisplay('4')">
+    <input type="button" value="5" onclick="appendToDisplay('5')">
+    <input type="button" value="6" onclick="appendToDisplay('6')">
+    <br> <!-- Add this line break -->
+    <input type="button" value="1" onclick="appendToDisplay('1')">
+    <input type="button" value="2" onclick="appendToDisplay('2')">
+    <input type="button" value="3" onclick="appendToDisplay('3')">
+    <input type="button" value="0" onclick="appendToDisplay('0')">
+    <input type="button" value="/" onclick="appendToDisplay('/')">
+    <input type="button" value="-" onclick="appendToDisplay('-')">
+    <input type="button" value="*" onclick="appendToDisplay('*')">
+    <input type="button" value="." onclick="appendToDisplay('.')">
+    <input type="button" value="+" onclick="appendToDisplay('+')">
+    <input type="button" value="=" onclick="calculate()">
+  </section>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const board = document.getElementById('board');
+        const cells = document.querySelectorAll('.cell');
+        let currentPlayer = 'X';
+        let gameStatus = ['','','','','','','','',''];
 
-      <section id="achievements">
-        <h2>Achievements</h2>
-        <p>Here are some of my achievements:</p>
-        <ul>
-          <li>
-            At 22, I wrote, presented and actualized a new administrative
-            training policy and implemented a franchise-wide change in
-            mentorship methods for the franchise of restaurants I worked for
-          </li>
-          <li>
-            I have recently Completed a web development bootcamp andCreated this
-            portfolio of web development projects
-          </li>
-        </ul>
-      </section>
-    </main>
+        cells.forEach(cell => {
+            cell.addEventListener('click', () => {
+                const index = parseInt(cell.getAttribute('data-index'));
+                if (gameStatus[index] === '' && !isGameOver()) {
+                    cell.textContent = currentPlayer;
+                    gameStatus[index] = currentPlayer;
+                    if (checkWinner(currentPlayer)) {
+                        alert(`${currentPlayer} wins!`);
+                        resetGame();
+                    } else if (isBoardFull()) {
+                        alert("It's a tie!");
+                        resetGame();
+                    } else {
+                        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                    }
+                }
+            });
+        });
 
-    <footer>
-      <p>&copy; 2023 Your Name. All rights reserved.</p>
-    </footer>
-  </body>
+        function checkWinner(player) {
+            const winningCombos = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8],
+                [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                [0, 4, 8], [2, 4, 6]
+            ];
+            return winningCombos.some(combo => {
+                return combo.every(index => gameStatus[index] === player);
+            });
+        }
+
+        function isBoardFull() {
+            return gameStatus.every(cell => cell !== '');
+        }
+
+        function isGameOver() {
+            return checkWinner('X') || checkWinner('O') || isBoardFull();
+        }
+
+        function resetGame() {
+            gameStatus = ['','','','','','','','',''];
+            cells.forEach(cell => cell.textContent = '');
+            currentPlayer = 'X';
+        }
+    });
+</script>
+<script>
+  function appendToDisplay(value) {
+    document.getElementById('display').value += value;
+  }
+
+  function calculate() {
+    try {
+      const result = eval(document.getElementById('display').value);
+      document.getElementById('display').value = result;
+    } catch (error) {
+      document.getElementById('display').value = 'Error';
+    }
+  }
+</script>
+  
+  <div class="spinner-container">
+    <div class="spinner red-circle"></div>
+    <div class="spinner green-circle"></div>
+    <div class="spinner blue-circle"></div>
+    <div class="spinner yellow-circle"></div>
+    <div class="spinner orange-circle"></div>
+    <div class="spinner brown-circle"></div>
+  </div>
+  
+  <footer>
+    <p>&copy; 2024 Ian Mount. All rights reserved.</p>
+  </footer>
+ 
+</body>
 </html>

@@ -1,3 +1,37 @@
+
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hide the sidebar */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    transition: 0.5s;
+  }
+  
+  #sidebar.active {
+    left: 0; /* Show the sidebar when active */
+  }
+  
+  #sidebar-button {
+    display: none; /* Hide the button by default on larger screens */
+  }
+  
+  /* Show the button on smaller screens */
+  @media screen and (max-width: 768px) {
+    #sidebar-button {
+      display: block;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 999;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  }
 /*******************************
         Global Styles
 *******************************/
@@ -158,18 +192,22 @@ section {
   text-align: center;
 }
 
-#projects .project-container {
+
+.project-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1.5fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 1rem;
+  justify-content: center; /* Center the grid horizontally */
 }
 
 .project-item {
+  margin: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
-  max-width: 0 auto;
+  max-width: 100%; /* Allow items to expand to full width */
 }
+
 
 .project-image-container {
   overflow: hidden;
@@ -571,4 +609,217 @@ footer {
   text-align: center;
   padding: 1.5rem;
   font-size: 0.9rem;
+}
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hide the sidebar */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    transition: 0.5s;
+  }
+  
+  #sidebar.active {
+    left: 0; /* Show the sidebar when active */
+  }
+  
+  #sidebar-button {
+    display: none; /* Hide the button by default on larger screens */
+  }
+  
+  /* Show the button on smaller screens */
+  @media screen and (max-width: 768px) {
+    #sidebar-button {
+      display: block;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 999;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  }
+  .spinner {
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #333; /* Change the color of the spinning wheel */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite; /* Control the animation speed and loop */
+    margin: 0 auto; /* Center the spinner horizontally */
+  }
+  
+  .spinner-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .spinner {
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #333; /* Default color for the spinning wheel */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px; /* Adjust the spacing between each spinner */
+    animation: slideAndSpin 10s linear infinite; /* Combined animation for sliding and spinning */
+  }
+  
+  .red-circle {
+    background-color: #ff6347; /* Reddish color */
+    animation: slideAndSpinCircle 10s linear infinite, spin 8s linear infinite; /* Combined animations for sliding and spinning */
+  }
+  
+  .green-circle {
+    background-color: #2e8b57; /* Dark green color */
+    animation: slideAndSpinCircle 12s linear infinite, spin 10s linear infinite; /* Combined animations for sliding and spinning */
+  }
+  
+  .blue-circle {
+    background-color: #4682b4; /* Steel blue color */
+    animation: slideAndSpinCircle 14s linear infinite, spin 12s linear infinite; /* Combined animations for sliding and spinning */
+  }
+  
+  .yellow-circle {
+    background-color: #ffd700; /* Gold color */
+    animation: slideAndSpinCircle 16s linear infinite, spin 14s linear infinite; /* Combined animations for sliding and spinning */
+  }
+  
+  .orange-circle {
+    background-color: #ff8c00; /* Dark orange color */
+    animation: slideAndSpinCircle 18s linear infinite, spin 16s linear infinite; /* Combined animations for sliding and spinning */
+  }
+  
+  .brown-circle {
+    background-color: #8b4513; /* Saddle brown color */
+    animation: slideAndSpinCircle 20s linear infinite, spin 18s linear infinite; /* Combined animations for sliding and spinning */
+  }
+
+  
+  
+  
+  @keyframes slideAndSpinCircle {
+  0% {
+    transform: translateX(-50vw) rotate(0deg); /* Start from the left edge of the viewport */
+  }
+  50% {
+    transform: translateX(50vw) rotate(1800deg); /* Move to the right edge of the viewport while spinning */
+  }
+  100% {
+    transform: translateX(-50vw) rotate(3600deg); /* Return to the left edge of the viewport while spinning */
+  }
+}
+  
+  @keyframes slideAlternate {
+    0% {
+      transform: translateY(-50vh);
+    }
+    50% {
+      transform: translateY(50vh);
+    }
+    100% {
+      transform: translateY(-50vh);
+    }
+  }
+
+
+  
+.triangle-container {
+  display: flex;
+  justify-content: space-between; /* Evenly distribute the space between triangles */
+  padding: 20px;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 43.3px solid #333; /* Height calculated for equilateral triangle */
+  animation: slideAndSpin 10s linear infinite; /* Combined animation for sliding and spinning */
+}
+
+
+.red-triangle {
+  border-bottom-color: #ff6347; /* Reddish color */
+  animation: slideAndSpin 10s linear infinite, slideAlternate 15s linear infinite; /* Combined animations for sliding and spinning */
+}
+
+.green-triangle {
+  border-bottom-color: #2e8b57; /* Dark green color */
+  animation: slideAndSpin 12s linear infinite, slideAlternate 14s linear infinite; /* Combined animations for sliding and spinning */
+}
+
+.blue-triangle {
+  border-bottom-color: #4682b4; /* Steel blue color */
+  animation: slideAndSpin 14s linear infinite, slideAlternate 12s linear infinite; /* Combined animations for sliding and spinning */
+}
+
+.yellow-triangle {
+  border-bottom-color: #ffd700; /* Gold color */
+  animation: slideAndSpin 16s linear infinite, slideAlternate 11s linear infinite; /* Combined animations for sliding and spinning */
+}
+
+.orange-triangle {
+  border-bottom-color: #ff8c00; /* Dark orange color */
+  animation: slideAndSpin 18s linear infinite, slideAlternate 10s linear infinite; /* Combined animations for sliding and spinning */
+}
+
+.brown-triangle {
+  border-bottom-color: #8b4513; /* Saddle brown color */
+  animation: slideAndSpin 20s linear infinite, slideAlternate 9s linear infinite; /* Combined animations for sliding and spinning */
+}
+@keyframes slideAndSpin {
+  0% {
+    transform: translateX(-50vw) rotate(0deg); /* Start from the left edge of the viewport */
+  }
+  50% {
+    transform: translateX(50vw) rotate(1800deg); /* Move to the right edge of the viewport while spinning */
+  }
+  100% {
+    transform: translateX(-50vw) rotate(3600deg); /* Return to the left edge of the viewport while spinning */
+  }
+}
+
+@keyframes slideAlternate {
+  0% {
+    transform: translateY(-50vh);
+  }
+  50% {
+    transform: translateY(50vh);
+  }
+  100% {
+    transform: translateY(-50vh);
+  }
+}
+
+#tic-tac-toe {
+  text-align: center;
+}
+
+.tic-tac-toe-board {
+  display: inline-block;
+}
+
+.board-row {
+  display: flex;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #1e6f36;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.cell:hover {
+  background-color: #f0f0f0;
 }

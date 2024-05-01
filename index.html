@@ -14,14 +14,13 @@
   <body>
     <header>
       <nav id="nav-menu"></nav>
+      <button class="sidebar-button" onclick="toggleSidebar()">&#9776;</button>
     </header>
-    
 
-    
     <section id="home">
       <h1>Welcome to My Portfolio</h1>
       <p>
-        Hi, my name is Ian Mount and I'm a freshly graduated from the
+        Hi, my name is Ian Mount and I'm a freshly <a href="certified.html">certified</a> at
         Full-Stack; Full-Time Web Development Boot Camp at General Assembly
         <a href="https://generalassemb.ly/" target="_blank"
           ><img
@@ -30,16 +29,25 @@
             style="width: 4%; height: 3%" /></a
         >.
       </p>
-      
-        
-        <br />
-        <p class="excerpt">"I am a highly motivated and driven individual committed to continual self-improvement in every aspect of my work. My objective is to contribute to the development of efficient, user-friendly solutions that address real-world challenges. While 'Good Job' may suffice for some, I consistently aim to deliver excellence, striving for nothing less than a 'Great Job' in every task I undertake.
 
-          I am dedicated to becoming an exceptional developer, understanding that true empowerment comes from accumulating experience and knowledge over time. Therefore, I value constructive feedback over praise, as it provides invaluable opportunities for growth and development. I eagerly welcome criticism from those with expertise exceeding my own.
-          
-          In my search for a professional environment, I seek a workplace that not only supports my individual needs but also encourages and challenges me to expand my skills and expertise. I am eager to contribute positively to a team that fosters continuous learning and personal development."
+      <br />
+      <p class="excerpt">
+        "I am a highly motivated and driven individual committed to continual
+        self-improvement in every aspect of my work. My objective is to
+        contribute to the development of efficient, user-friendly solutions that
+        address real-world challenges. While 'Good Job' may suffice for some, I
+        consistently aim to deliver excellence, striving for nothing less than a
+        'Great Job' in every task I undertake. I am dedicated to becoming an
+        exceptional developer, understanding that true empowerment comes from
+        accumulating experience and knowledge over time. Therefore, I value
+        constructive feedback over praise, as it provides invaluable
+        opportunities for growth and development. I eagerly welcome criticism
+        from those with expertise exceeding my own. In my search for a
+        professional environment, I seek a workplace that not only supports my
+        individual needs but also encourages and challenges me to expand my
+        skills and expertise. I am eager to contribute positively to a team that
+        fosters continuous learning and personal development."
         <br />
-      
       </p>
       <p class="excerpt">
         To that end I would love to
@@ -317,7 +325,7 @@
     </section>
 
     <section id="contact">
-      <h2 style="text-align:center">Get in Touch</h2>
+      <h2 style="text-align: center">Get in Touch</h2>
       <br />
 
       <ul class="contact-links">
@@ -330,6 +338,7 @@
           />
         </li>
         <li>
+          
           <a href="http://www.linkedin.com/in/webdevwonder88">LinkedIn</a
           ><img
             src="/images/linkd.png"
@@ -340,18 +349,26 @@
       </ul>
       <br />
       <div id="responseMessage"></div>
-      <form class="contact-form" id="contactForm" action="http://localhost:3000/submit" method="POST">
+      <form
+      class="contact-form"
+      id="contactForm"
+      action="https://formspree.io/f/mqkrwqzn"
+      method="POST"
+      onsubmit="handleSubmit(event)"
+    >
+  
+    <label for="name">Name:</label>
+    <input
+      style="text-align: center; border: 2px solid white"
+      type="text"
+      id="name"
+      name="name"
+      class="feedback-input"
+      placeholder="Name"
+      required
+    />
 
-        <label for="name">Name:</label>
-        <input
-          style="text-align: center; border: 2px solid white"
-          type="text"
-          id="name"
-          name="name"
-          class="feedback-input"
-          placeholder="Name"
-          required
-        />
+      />
 
         <label for="email">Email:</label>
         <input
@@ -380,5 +397,13 @@
     <footer>
       <p>&copy; 2024 Ian Mount. All rights reserved.</p>
     </footer>
+
+    <script>
+      // Toggle sidebar function
+      function toggleSidebar() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
+      }
+    </script>
   </body>
 </html>
